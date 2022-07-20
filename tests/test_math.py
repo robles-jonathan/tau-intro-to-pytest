@@ -4,6 +4,13 @@ Their purpose is to show how to use the pytest framework by example.
 """
 
 #------------------------------------------------------------------------------------------------
+#   Imports
+#------------------------------------------------------------------------------------------------
+
+import pytest
+
+
+#------------------------------------------------------------------------------------------------
 #   A most basic test function
 #------------------------------------------------------------------------------------------------
 
@@ -63,3 +70,14 @@ def test_one_plus_two():
     5. By default, pytest will print test code snippets, failure reasons, and test result tallies for failed test cases.
         true
     """
+    
+#------------------------------------------------------------------------------------------------
+#   A test function that verifies an exception
+#------------------------------------------------------------------------------------------------
+
+def test_divide_by_zero():
+    with pytest.raises(ZeroDivisionError) as e:
+        num = 1 / 0
+    
+    assert 'division by zero' in str(e.value)
+    
