@@ -10,37 +10,42 @@ Their purpose is to show how to use the pytest framework by example.
 import pytest
 from stuff.accum import Accumulator
 
+
+#------------------------------------------------------------------------------------------------
+#   Fixtures
+#------------------------------------------------------------------------------------------------
+
+@pytest.fixture
+def accum():
+    return Accumulator()
+
+
 #------------------------------------------------------------------------------------------------
 #   Test
 #------------------------------------------------------------------------------------------------
 
 
-def test_accumulator_init():
-    accum = Accumulator()
+def test_accumulator_init(accum):
     assert accum.count == 0
     
     
-def test_accumulator_add_one():
-    accum = Accumulator()
+def test_accumulator_add_one(accum):
     accum.add()
     assert accum.count == 1
     
     
-def test_accumulator_add_three():
-    accum = Accumulator()
+def test_accumulator_add_three(accum):
     accum.add(3)
     assert accum.count == 3
     
     
-def test_accumulator_add_twice():
-    accum = Accumulator()
+def test_accumulator_add_twice(accum):
     accum.add()
     accum.add()
     assert accum.count == 2
     
     
-def test_accumulator_cannot_set_count_directly():
-    accum = Accumulator()
+def test_accumulator_cannot_set_count_directly(accum):
     with pytest.raises(AttributeError, match=r"can't set attribute") as e:
         accum.count = 10
         
@@ -60,4 +65,25 @@ accum = Accumulator()
 
 5. Which of the following lines represents an "Assert" step?
 assert accum.count == 0
+"""
+
+
+"""
+1. In pytest, what is a fixture?
+    A function that handles setup and cleanup operations for a test case.
+    
+2. What is the name of the decorator used for defining functions as fixtures?
+    @pytest.fixture
+    
+3. Fixtures cover the "Act" phase of "Arrange-Act-Assert".
+    false
+    
+4. To share fixtures between test modules, where should the fixtures be located?
+    In a "conftest.py" module under the "tests" directory.
+    
+5. A test case cannot use multiple fixtures.
+    false
+    
+6. A fixture can provide both setup and cleanup logic by using a yield statement.
+    true
 """
