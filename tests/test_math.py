@@ -80,4 +80,19 @@ def test_divide_by_zero():
         num = 1 / 0
     
     assert 'division by zero' in str(e.value)
+    """
+    1. What is the purpose of "pytest.raises"?
+    To verify that the code under test raises expected exceptions.
     
+    2. "pytest.raises" must be imported from the pytest module.
+    true
+    
+    3. "pytest.raises" does not look for exceptions based on type.
+    false
+    
+    4. Why does "pytest.raises" need to be used with a "with" statement?
+    The "with" statement executes additional "enter" and "exit" logic for handling raised exceptions.
+    
+    5. How can "pytest.raises" store the raised exception object for further assertions?
+    Add an "as" clause to the end of the "with" statement to store the exception into a variable.
+    """
