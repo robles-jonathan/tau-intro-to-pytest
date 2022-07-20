@@ -27,3 +27,39 @@ What is the best command for running pytest test?
 pytest treats all function in modules under the "tests" directory as test cases.
     false
 """
+
+#------------------------------------------------------------------------------------------------
+#   A most basic test function
+#------------------------------------------------------------------------------------------------
+
+"""
+#Failed test case
+def test_one_plus_two():
+    a = 1
+    b = 2
+    c = 0
+    assert a + b == c
+"""
+
+def test_one_plus_two():
+    a = 1
+    b = 2
+    c = 3
+    assert a + b == c
+    
+    """
+    1. One Python test module can contain more than one test case function.
+        true
+        
+    2. What symbol does pytest use in its reports to denote a passing test?
+        .
+        
+    3. What symbol does pytest use in its reports to denote a failing test?
+        F
+        
+    4. What types of exceptions will make a pytest test case fail?
+        any type of exception
+        
+    5. By default, pytest will print test code snippets, failure reasons, and test result tallies for failed test cases.
+        true
+    """
