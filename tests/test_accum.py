@@ -56,6 +56,7 @@ def test_accumulator_cannot_set_count_directly(accum):
         
         
 """
+Chapter 5
 1. What are "unit tests"?
     Small tests that directly cover "units of work" like functions and methods
     
@@ -74,6 +75,7 @@ assert accum.count == 0
 
 
 """
+Chapter 6
 1. In pytest, what is a fixture?
     A function that handles setup and cleanup operations for a test case.
     
@@ -91,4 +93,28 @@ assert accum.count == 0
     
 6. A fixture can provide both setup and cleanup logic by using a yield statement.
     true
+"""
+
+"""
+Chapter 7
+1. How many different command line options does pytest have?
+Many more than we can cover in this course!
+
+2. What is the option for listing all available command line options with descriptions?
+"-h" or "--help"
+
+3. Which of the following is NOT printed by pytest when the "--verbose" option is used?
+dots for passing tests and F's for failing tests
+
+4. pytest does not print failure introspection when the "--quiet" option is used.
+false
+
+5. pytest provides options for ending a test suite run after a certain limit of tests fail.
+true
+
+6. pytest can generate JUnit XML reports.
+true
+
+7. Which of the following is NOT a supported pytest configuration file type? (Hint: Check the "Configuration" page in the pytest docs online!)
+pytest.cfg
 """

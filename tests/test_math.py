@@ -20,6 +20,7 @@ def test_one_plus_one():
     
     
 """
+Chapter 1
 What command prints the current Python version?
     python --version
 
@@ -57,6 +58,7 @@ def test_one_plus_two():
     
     
     """
+    Chapter 2
     1. One Python test module can contain more than one test case function.
         true
         
@@ -86,6 +88,7 @@ def test_divide_by_zero():
     
     
     """
+    Chapter 3
     1. What is the purpose of "pytest.raises"?
     To verify that the code under test raises expected exceptions.
     
@@ -146,6 +149,7 @@ def test_multiplication(a, b , product):
     assert a * b == product 
     
 """
+Chapter 4
 1. What is an "equivalence class" for test case inputs?
     A unique kind of input that yields a unique kind of output.
     
